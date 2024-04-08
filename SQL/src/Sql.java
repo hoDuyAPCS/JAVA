@@ -14,6 +14,15 @@ public class Sql {
             // Connection successful, do something...
             System.out.println("Connected to the database!");
             Statement stmt = conn.createStatement();
+
+            // SELECT * FROM Users
+            // DELETE FROM Users WHERE ID = 4
+            // INSERT INTO Users (ID, Name, Age, Email) VALUES (4, 'Bob Brown', 28, 'bob@example.com')
+
+            String test = "DELETE FROM Users WHERE ID = 4";
+            stmt.executeUpdate(test);
+
+
             String sql = "SELECT * FROM Users";
             ResultSet rs = stmt.executeQuery(sql);
             // Process the results
